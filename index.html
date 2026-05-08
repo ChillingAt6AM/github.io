@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>riddly diddly</title>
+    <title>CHILLY.VC</title>
 
     <style>
         html, body {
@@ -13,6 +13,7 @@
             height: 100%;
             overflow: hidden;
             background: black;
+            cursor: pointer;
         }
 
         video {
@@ -24,8 +25,17 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline>
+    <video id="bg-video" autoplay muted loop playsinline>
         <source src="resources/riddlydiddly.mp4" type="video/mp4">
     </video>
+
+    <script>
+        const video = document.getElementById("bg-video");
+
+        document.body.addEventListener("click", () => {
+            video.muted = false;
+            video.play();
+        }, { once: true });
+    </script>
 </body>
 </html>
